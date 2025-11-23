@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentro Paranormal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="loginPage" class="page active">
+        <div class="login-wrapper"> 
+            <div class="login-container">
+                <div class="login-left">
+                    <img src="images/Foto paranormal.png" alt="Paranormal" class="login-image">
+                </div>
+                <div class="login-right">
+                    <div class="login-content">
+                        <h1>BIENVENIDO AL<br>ENCUENTRO<br>PARANORMAL</h1>
+                        <p class="subtitle">Descubre los misterios del más allá</p>
+                        
+                        <div id="loginForm" class="form-container">
+                            <input type="text" id="loginUsername" placeholder="Usuario/Email" class="input-field">
+                            <input type="password" id="loginPassword" placeholder="Contraseña" class="input-field">
+                            <button onclick="login()" class="btn-primary">Iniciar sesión</button>
+                            <button onclick="showRegister()" class="btn-secondary">¿Olvidaste tu contraseña?</button>
+                            <p class="register-link">¿No tienes cuenta? <span onclick="showRegister()">Regístrate</span></p>
+                        </div>
+
+                        <div id="registerForm" class="form-container hidden">
+                            <input type="text" id="registerUsername" placeholder="Usuario" class="input-field">
+                            <input type="email" id="registerEmail" placeholder="Email" class="input-field">
+                            <input type="password" id="registerPassword" placeholder="Contraseña" class="input-field">
+                            <label for="profilePicture" class="input-file-label">Elige una foto de perfil</label>
+                            <input type="file" id="profilePicture" accept="image/*" class="input-file">
+                            <button onclick="register()" class="btn-primary">Registrarse</button>
+                            <button onclick="showLogin()" class="btn-secondary">Volver al login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="homePage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link active" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePicHome" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileNameHome">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="enc-main-body">
+            <div class="enc-slider">
+                <div class="enc-slides">
+                    <div class="enc-slide">
+                        <img src="img/img_2.png" alt="Banner 1">
+                        <div class="enc-slide-content">
+                            <h2>Misterios del Abismo</h2>
+                            <a href="#" onclick="goToHistorias()" class="enc-card-btn">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="enc-slide">
+                        <img src="img/img_6.png" alt="Banner 2">
+                        <div class="enc-slide-content">
+                            <h2>Expedientes Secretos</h2>
+                            <a href="#" onclick="goToNoticias()" class="enc-slide-btn">Leer</a>
+                        </div>
+                    </div>
+                    <div class="enc-slide">
+                        <img src="img/img_2.png" alt="Banner 3">
+                        <div class="enc-slide-content">
+                            <h2>Voces del Más Allá</h2>
+                            <a href="#" onclick="goToPodcast()" class="enc-slide-btn">Conoce más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <section class="enc-subtitulo">
+                <h2>Últimas noticias</h2>
+            </section>
+        
+            <div class="enc-container">
+                <section class="enc-col">
+                    <img src="img/img_1.png" alt="Noticia 1" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">El Caso Amityville</h2>
+                        <p class="enc-card-text">Nueva evidencia en las cintas de audio de 1976 revela voces desconocidas.</p>
+                        <a href="#" onclick="openNews(1)" class="enc-card-btn">Leer</a>
+                    </div>
+                </section>
+                <section class="enc-col">
+                    <img src="img/img_8.png" alt="Noticia 2" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">Poltergeist en Bogotá</h2>
+                        <p class="enc-card-text">Reportan actividad inusual en un almacén abandonado del centro.</p>
+                        <a href="#" onclick="openNews(2)" class="enc-card-btn">Leer</a>
+                    </div>
+                </section>
+                <section class="enc-col">
+                    <img src="img/img_9.png" alt="Noticia 3" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">Avistamiento OVNI</h2>
+                        <p class="enc-card-text">Luces extrañas sobre la costa obligan intervención militar.</p>
+                        <a href="#" onclick="openNews(4)" class="enc-card-btn">Leer</a>
+                    </div>
+                </section>
+            </div>
+        
+            <section class="enc-subtitulo">
+                <h2>Últimos videos</h2>
+            </section>
+        
+            <div class="enc-container">
+                <section class="enc-col">
+                    <img src="img/img_10.png" alt="Video 1" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">Investigación en vivo</h2>
+                        <p class="enc-card-text">Entramos al hospital abandonado de noche.</p>
+                        <a href="#" onclick="openVideoPlayer('https://player.vimeo.com/video/1139855523', 'Investigación en vivo', 'Entramos al hospital abandonado de noche.')" class="enc-card-btn">Ver video</a>
+                    </div>
+                </section>
+                <section class="enc-col">
+                    <img src="img/img_11.png" alt="Video 2" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">Evidencia Espectral</h2>
+                        <p class="enc-card-text">Análisis de las grabaciones del caso Enfield.</p>
+                        <a href="#" onclick="openVideoPlayer('https://player.vimeo.com/video/1139855523', 'Evidencia Espectral', 'Análisis de las grabaciones del caso Enfield.')" class="enc-card-btn">Ver video</a>
+                    </div>
+                </section>
+                <section class="enc-col">
+                    <img src="img/img_12.png" alt="Video 3" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">Rituales Prohibidos</h2>
+                        <p class="enc-card-text">Documental sobre prácticas antiguas en la selva.</p>
+                        <a href="#" onclick="openVideoPlayer('https://player.vimeo.com/video/1139855523', 'Rituales Prohibidos', 'Documental sobre prácticas antiguas en la selva.')" class="enc-card-btn">Ver video</a>
+                    </div>
+                </section>
+            </div>
+        
+            <section class="enc-subtitulo">
+                <h2>Últimos podcast</h2>
+            </section>
+        
+            <div class="enc-container">
+                <section class="enc-col enc-card-horizontal">
+                    <img src="img/img_3.png" alt="Podcast 1" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title-2">Episodio 1: La Llorona</h2>
+                        <p class="enc-card-text">Analizamos la leyenda urbana más famosa de Latinoamérica.</p>
+                        <a href="#" onclick="openPodcastPlayer('img/img_3.png', 'Episodio 1: La Llorona', 'Analizamos la leyenda urbana más famosa de Latinoamérica.')" class="enc-card-btn">Escuchar</a>
+                    </div>
+                </section>
+                <section class="enc-col enc-card-horizontal">
+                    <img src="img/img_13.png" alt="Podcast 2" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title-2">Episodio 2: Voces</h2>
+                        <p class="enc-card-text">Psicofonías reales captadas en cementerios locales.</p>
+                        <a href="#" onclick="openPodcastPlayer('img/img_13.png', 'Episodio 2: Voces', 'Psicofonías reales captadas en cementerios locales.')" class="enc-card-btn">Escuchar</a>
+                    </div>
+                </section>
+            </div>
+
+            <section class="enc-subtitulo">
+                <h2>Galería destacada</h2>
+            </section>
+          
+            <section class="enc-galeria">
+                <div class="enc-galeria-item">
+                  <img src="img/img_14.png" alt="Podcast 1">
+                </div>
+                <div class="enc-galeria-item">
+                  <img src="img/img_15.png" alt="Podcast 2">
+                </div>
+                <div class="enc-galeria-item">
+                  <img src="img/img_4.png" alt="Podcast 3">
+                </div>
+                <div class="enc-galeria-item">
+                  <img src="img/img_16.png" alt="Podcast 4">
+                </div>
+            </section>
+
+            <section class="enc-subtitulo">
+                <h2>Últimas publicaciones del foro</h2>
+            </section>
+            
+            <section class="enc-comentarios">
+                <div class="enc-comentario">
+                    <img src="img/img_5.png" alt="Avatar" class="enc-avatar">
+                    <div class="enc-contenido-comentario">
+                        <h3 class="enc-comentario-titulo">Excelente episodio</h3>
+                        <span class="enc-comentario-fecha">Publicado el 12 Nov 2025</span>
+                        <p class="enc-comentario-texto">
+                            Me ha encantado el análisis sobre las psicofonías. ¿Tienen planeado hacer uno sobre OVNIs?
+                        </p>
+                        <a href="#" onclick="goToForo()" class="enc-card-btn-foro">Ver más</a>
+                    </div>
+                </div>
+                <div class="enc-comentario">
+                    <img src="img/img_17.png" alt="Avatar" class="enc-avatar">
+                    <div class="enc-contenido-comentario">
+                        <h3 class="enc-comentario-titulo">Duda sobre el video</h3>
+                        <span class="enc-comentario-fecha">Publicado el 12 Nov 2025</span>
+                        <p class="enc-comentario-texto">
+                            En el minuto 10:45 se ve una sombra. ¿Alguien más la notó? Es escalofriante.
+                        </p>
+                        <a href="#" onclick="goToForo()" class="enc-card-btn-foro">Ver más</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="podcastPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link active" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePicPod" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileNamePod">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="enc-main-body">
+            <header class="site-header">
+                <h1>Podcast ENC</h1>
+            </header>
+        
+            <section class="enc-subtitulo">
+                <h2>Últimos podcast</h2>
+            </section>
+        
+            <div class="enc-container">
+                <section class="enc-col enc-card-horizontal">
+                    <img src="img/img_3.png" alt="Podcast 1" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title-2">La Llorona</h2>
+                        <p class="enc-card-text">Historia profunda sobre el origen del mito.</p>
+                        <a href="#" onclick="openPodcastPlayer('img/img_3.png', 'La Llorona', 'Historia profunda sobre el origen del mito.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+                <section class="enc-col enc-card-horizontal">
+                    <img src="img/img_3.png" alt="Podcast 2" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title-2">El Silbón</h2>
+                        <p class="enc-card-text">Relatos de los llanos orientales.</p>
+                        <a href="#" onclick="openPodcastPlayer('img/img_3.png', 'El Silbón', 'Relatos de los llanos orientales.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+            </div>
+
+            <div class="enc-container">
+                <section class="enc-col enc-card-horizontal">
+                    <img src="img/img_3.png" alt="Podcast 3" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title-2">Ouija: Reglas</h2>
+                        <p class="enc-card-text">Qué no hacer nunca al jugar.</p>
+                        <a href="#" onclick="openPodcastPlayer('img/img_3.png', 'Ouija: Reglas', 'Qué no hacer nunca al jugar.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+                <section class="enc-col enc-card-horizontal">
+                    <img src="img/img_3.png" alt="Podcast 4" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title-2">Exorcismos</h2>
+                        <p class="enc-card-text">Entrevista con un sacerdote experto.</p>
+                        <a href="#" onclick="openPodcastPlayer('img/img_3.png', 'Exorcismos', 'Entrevista con un sacerdote experto.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="enc-container">
+                <section class="enc-col enc-card-horizontal">
+                    <img src="img/img_3.png" alt="Podcast 5" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title-2">El caso Vallecas</h2>
+                        <p class="enc-card-text">Análisis detallado del expediente policial.</p>
+                        <a href="#" onclick="openPodcastPlayer('img/img_3.png', 'El caso Vallecas', 'Análisis detallado del expediente policial.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+                <section class="enc-col enc-card-horizontal">
+                    <img src="img/img_3.png" alt="Podcast 6" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title-2">Vampirismo</h2>
+                        <p class="enc-card-text">Mitos y realidades médicas.</p>
+                        <a href="#" onclick="openPodcastPlayer('img/img_3.png', 'Vampirismo', 'Mitos y realidades médicas.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="reproductorPodcastPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link active" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePicPodPlayer" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileNamePodPlayer">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="enc-main-body">
+            <header class="site-header">
+                <h1>Reproductor de podcast ENC</h1>
+            </header>
+
+            <section class="enc-subtitulo">
+                <h2 id="podcastPlayerTitle">Título del Episodio</h2>
+            </section>
+
+            <section class="enc-col enc-card-horizontal">
+                <img id="podcastPlayerImg" src="img/img_3.png" alt="Podcast" class="enc-card-img">
+                <div class="enc-card-content">
+                    <h2 class="enc-card-title-2">Escuchando ahora</h2>
+                    <p id="podcastPlayerDesc" class="enc-card-text">Descripción...</p>
+                    <div style="margin-top: 20px; color: #aaa;">[Controles de Reproducción Simulados]</div>
+                </div>
+            </section>
+
+            <section class="enc-subtitulo">
+                <h2>Comentarios del episodio</h2>
+            </section>
+
+            <section class="enc-comentarios">
+                <div class="enc-comentario">
+                    <img src="img/img_5.png" alt="Avatar" class="enc-avatar">
+                    <div class="enc-contenido-comentario">
+                        <h3 class="enc-comentario-titulo">Excelente episodio</h3>
+                        <span class="enc-comentario-fecha">Publicado el 12 Nov 2025</span>
+                        <p class="enc-comentario-texto">
+                            Muy informativo. Me gustó la parte histórica.
+                        </p>
+                    </div>
+                </div>
+                <div class="enc-comentario">
+                    <img src="img/img_5.png" alt="Avatar" class="enc-avatar">
+                    <div class="enc-contenido-comentario">
+                        <h3 class="enc-comentario-titulo">Tengo una pregunta</h3>
+                        <span class="enc-comentario-fecha">Publicado el 12 Nov 2025</span>
+                        <p class="enc-comentario-texto">
+                            ¿De dónde sacaron esa grabación? Suena muy real.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="videosPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link active" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePicVid" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileNameVid">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="enc-main-body">
+            <header class="site-header">
+                <h1>Videos ENC</h1>
+            </header>
+        
+            <section class="enc-subtitulo">
+                <h2>Últimos videos</h2>
+            </section>
+        
+            <div class="enc-container">
+                <section class="enc-col">
+                    <img src="img/img_1.png" alt="Video 1" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">Investigación Hospital</h2>
+                        <p class="enc-card-text">Exploración nocturna.</p>
+                        <a href="#" onclick="openVideoPlayer('https://player.vimeo.com/video/1085077772', 'Investigación Hospital', 'Exploración nocturna.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+                <section class="enc-col">
+                    <img src="img/img_1.png" alt="Video 2" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">El Poltergeist</h2>
+                        <p class="enc-card-text">Evidencia captada en cámara.</p>
+                        <a href="#" onclick="openVideoPlayer('https://player.vimeo.com/video/1085077772', 'El Poltergeist', 'Evidencia captada en cámara.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+                <section class="enc-col">
+                    <img src="img/img_1.png" alt="Video 3" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">Rituales</h2>
+                        <p class="enc-card-text">Documental corto.</p>
+                        <a href="#" onclick="openVideoPlayer('https://player.vimeo.com/video/1085077772', 'Rituales', 'Documental corto.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+            </div>
+
+            <div class="enc-container">
+                <section class="enc-col">
+                    <img src="img/img_1.png" alt="Video 4" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">Entrevista Exorcista</h2>
+                        <p class="enc-card-text">Testimonio real.</p>
+                        <a href="#" onclick="openVideoPlayer('https://player.vimeo.com/video/1085077772', 'Entrevista Exorcista', 'Testimonio real.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+                <section class="enc-col">
+                    <img src="img/img_1.png" alt="Video 5" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">Casa Embrujada</h2>
+                        <p class="enc-card-text">Recorrido virtual.</p>
+                        <a href="#" onclick="openVideoPlayer('https://player.vimeo.com/video/1085077772', 'Casa Embrujada', 'Recorrido virtual.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+                <section class="enc-col">
+                    <img src="img/img_1.png" alt="Video 6" class="enc-card-img">
+                    <div class="enc-card-content">
+                        <h2 class="enc-card-title">OVNI Chile</h2>
+                        <p class="enc-card-text">Análisis del video viral.</p>
+                        <a href="#" onclick="openVideoPlayer('https://player.vimeo.com/video/1085077772', 'OVNI Chile', 'Análisis del video viral.')" class="enc-card-btn">Ver más</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="reproductorVideoPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link active" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePicVidPlayer" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileNameVidPlayer">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="enc-main-body">
+            <header class="site-header">
+                <h1>Videos ENC</h1>
+            </header>
+        
+            <section class="enc-subtitulo">
+                <h2 id="videoPlayerTitle">Título del Video</h2>
+            </section>
+        
+            <section class="enc-col">
+                <div class="video-container">
+                    <iframe 
+                        id="videoIframe"
+                        src=""
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        title="Video Player">
+                    </iframe>
+                </div>
+                <div class="enc-card-content">
+                    <h2 class="enc-card-title">Descripción</h2>
+                    <p id="videoPlayerDesc" class="enc-card-text">Detalles del video...</p>
+                </div>
+            </section>
+        
+            <section class="enc-subtitulo">
+                <h2>Comentarios</h2>
+            </section>
+        
+            <section class="enc-comentarios">
+                <div class="enc-comentario">
+                    <img src="img/img_5.png" alt="Avatar" class="enc-avatar">
+                    <div class="enc-contenido-comentario">
+                        <h3 class="enc-comentario-titulo">Impresionante</h3>
+                        <span class="enc-comentario-fecha">Publicado el 12 Nov 2025</span>
+                        <p class="enc-comentario-texto">
+                            La calidad de imagen es muy buena.
+                        </p>
+                    </div>
+                </div>
+                <div class="enc-comentario">
+                    <img src="img/img_5.png" alt="Avatar" class="enc-avatar">
+                    <div class="enc-contenido-comentario">
+                        <h3 class="enc-comentario-titulo">Duda</h3>
+                        <span class="enc-comentario-fecha">Publicado el 12 Nov 2025</span>
+                        <p class="enc-comentario-texto">
+                            ¿Esto es real o efectos especiales?
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="noticiasPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link active" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePic" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileName">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="news-content">
+                    <h2 class="section-title">NOTICIAS PARANORMALES</h2>
+                    
+                    <div class="news-grid" id="newsGrid">
+                    </div>
+                </div>
+                
+                <aside class="categories-sidebar">
+                    <h3>Categorías</h3>
+                    <ul id="categoryList">
+                        <li onclick="filterNewsByCategory('Todas', this)" class="active">Todas</li>
+                        <li onclick="filterNewsByCategory('Fantasmas', this)">Fantasmas</li>
+                        <li onclick="filterNewsByCategory('OVNIs', this)">OVNIs</li>
+                        <li onclick="filterNewsByCategory('Leyendas Urbanas', this)">Leyendas urbanas</li>
+                    </ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="articleDetailPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePic2" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileName2">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="article-content-wrapper">
+                <div class="article-main">
+                    <h1 id="articleTitle"></h1>
+                    <p class="article-author">Publicado por <span id="articleAuthor"></span></p>
+                    
+                    <img id="articleImage" src="" alt="Historia" class="article-image">
+                    
+                    <div id="articleContent" class="article-text">
+                    </div>
+
+                    <div class="comments-section">
+                        <h3>Comentarios (3)</h3>
+                        <div class="comment-input">
+                            <input type="text" placeholder="Escribe tu comentario..." class="comment-field">
+                            <button class="btn-comment">Publicar comentario</button>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="article-sidebar">
+                    <h3>Noticias relacionadas</h3>
+                    <div class="related-news" id="relatedNews">
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="foroPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link active" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePic3" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileName3">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="forum-content">
+                <div class="forum-header">
+                    <h2 class="section-title">FORO PARANORMAL</h2>
+                    <button class="btn-new-topic" onclick="showNewTopicForm()">Crear Nuevo Tema</button>
+                </div>
+
+                <div class="forum-table" id="forumList">
+                    <div class="forum-table-header">
+                        <div class="header-temas">TEMAS</div>
+                        <div class="header-autor">AUTOR</div>
+                        <div class="header-ultima">ÚLTIMA RESPUESTA</div>
+                        <div class="header-respuestas">RESPUESTAS</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="foroTopicPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link active" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePic4" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileName4">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="topic-detail-wrapper">
+                <h2 class="topic-detail-title" id="topicDetailTitle"></h2>
+                
+                <div class="message-initial">
+                    <h3>MENSAJE INICIAL</h3>
+                    <div class="comment-post" id="topicDetailInitialPost">
+                    </div>
+                </div>
+
+                <div class="comments-section" id="topicDetailCommentsSection">
+                    <h3 id="topicDetailCommentCount"></h3>
+                    
+                    <div class="comment-input-box">
+                        <input type="text" placeholder="Escribe tu comentario..." class="comment-field">
+                        <button class="btn-comment">Publicar comentario</button>
+                    </div>
+
+                    <div id="topicDetailCommentsList">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <div id="foroNewTopicPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link active" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePic5" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileName5">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="new-topic-wrapper">
+                <h2 class="section-title">CREAR UN NUEVO TEMA</h2>
+                <div class="new-topic-form">
+                    <input type="text" id="newTopicTitle" placeholder="Título de tu tema" class="input-field">
+                    <textarea id="newTopicMessage" placeholder="Escribe tu mensaje inicial aquí..." class="textarea-field"></textarea>
+                    <button class="btn-primary" onclick="postNewTopic()">Publicar Tema</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="galeriaPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link active" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePic6" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileName6">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="gallery-content">
+                    <h2 class="section-title">GALERÍA PARANORMAL</h2>
+                    <div class="gallery-grid" id="galleryGrid">
+                    </div>
+                </div>
+                <aside class="categories-sidebar">
+                    <h3>Categorías</h3>
+                    <ul id="galleryCategoryList">
+                        <li onclick="filterGallery('Todas', this)" class="active">Todas</li>
+                        <li onclick="filterGallery('Fantasmas', this)">Fantasmas</li>
+                        <li onclick="filterGallery('OVNIs', this)">OVNIs</li>
+                        <li onclick="filterGallery('Leyendas Urbanas', this)">Leyendas urbanas</li>
+                    </ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="historiasPage" class="page">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/Logo.png" alt="Logo">
+                    <span>ENCUENTRO PARANORMAL</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link" onclick="goToHome()">INICIO</a>
+                    <a href="#" class="nav-link" onclick="goToNoticias('NOTICIAS')">NOTICIAS</a>
+                    <a href="#" class="nav-link" onclick="goToPodcast()">PODCAST</a>
+                    <a href="#" class="nav-link" onclick="goToVideos()">VIDEOS</a>
+                    <a href="#" class="nav-link" onclick="goToForo()">FORO</a>
+                    <a href="#" class="nav-link" onclick="goToGaleria()">GALERÍA</a>
+                    <a href="#" class="nav-link active" onclick="goToHistorias()">HISTORIAS</a>
+                </nav>
+                <div class="user-section">
+                    <img id="userProfilePic7" src="" alt="Perfil" class="user-pic">
+                    <span id="userProfileName7">MI PERFIL</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="stories-content">
+                    <h2 class="section-title">HISTORIAS PARANORMALES</h2>
+                    <div class="stories-grid" id="storiesGrid">
+                    </div>
+                    <div class="pagination-controls" id="storiesPagination">
+                    </div>
+                </div>
+                <aside class="categories-sidebar">
+                    <h3>Filtrar por</h3>
+                    <ul id="storiesCategoryList">
+                        <li onclick="filterStories('Todas', this)" class="active">Todas</li>
+                        <li onclick="filterStories('Historias Personales', this)">Historias personales</li>
+                        <li onclick="filterStories('Leyendas Urbanas', this)">Leyendas urbanas</li>
+                        <li onclick="filterStories('Fantasmas', this)">Fantasmas</li>
+                        <li onclick="filterStories('Demonios', this)">Demonios</li>
+                    </ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>encuentroparanormal@gmail.com</p>
+                    <p>Cal. 41 #59-46 - Barranquilla</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon fb">f</a>
+                        <a href="#" class="social-icon tw">t</a>
+                        <a href="#" class="social-icon ig">i</a>
+                        <a href="#" class="social-icon li">in</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+        <div id="lightboxCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
